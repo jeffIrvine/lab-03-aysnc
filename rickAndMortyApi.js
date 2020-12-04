@@ -11,7 +11,15 @@ const getCharacter = async(id) => {
     return charObj
 };
 
+const getManyCharacters = (ids) => {
+    return Promise.all(ids.map(item =>
+        getCharacter(item)
+    )); 
+
+}
+
 
 module.exports = {
-    getCharacter
+    getCharacter,
+    getManyCharacters
 }
