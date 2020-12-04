@@ -11,11 +11,11 @@ const getCharacter = async(id) => {
     return charObj
 };
 
-const getManyCharacters = (ids) => {
-    return Promise.all(ids.map(item =>
+const getManyCharacters = async(ids) => {
+    const result = await Promise.all(ids.map(item =>
         getCharacter(item)
     )); 
-
+    return result
 }
 
 
